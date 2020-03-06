@@ -68,15 +68,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    //Debug.Log("space");
+                    Debug.Log("space");
                     if (haselement && !other.GetComponent<CubeController>().elementplaced)
                     {
+                        Debug.Log("Here");
                         place(other, child);
                         return;
                     }
                     if (!haselement && other.GetComponent<CubeController>().elementplaced)
                     {
                         //other.GetComponentInChildren<Transform>().position = transform.position + new Vector3(0, 1, 0);
+                        Debug.Log("other");
                         pick(other);
                         return;
                     }
