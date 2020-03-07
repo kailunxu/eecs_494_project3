@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Factory.cs" />
+     <Compile Include="Assets\ItemManagement.cs" />
      <Compile Include="Assets\Script\CubeController.cs" />
      <Compile Include="Assets\Script\ElementGenerator.cs" />
      <Compile Include="Assets\Script\EventBus.cs" />

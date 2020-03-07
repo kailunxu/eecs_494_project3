@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
         other.GetComponent<CubeController>().child = child;
         other.GetComponent<CubeController>().child.transform.position = other.transform.position + new Vector3(0, 0, -1);
         other.GetComponent<CubeController>().child.transform.parent = other.transform;
+        //GetComponent<PlayerMovement>().child.GetComponent<ItemManagement>().holding = false;
         haselement = false;
         int currx = Mathf.RoundToInt(other.transform.position.x) + VictoryJudge.SIZE;
         int curry = Mathf.RoundToInt(other.transform.position.y) + VictoryJudge.SIZE;
@@ -128,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<PlayerMovement>().child = other.GetComponent<CubeController>().child;
         GetComponent<PlayerMovement>().child.transform.position = transform.position;
         GetComponent<PlayerMovement>().child.transform.parent = this.transform;
+        //GetComponent<PlayerMovement>().child.GetComponent<ItemManagement>().holding = true;
         haselement = true;
         int currx = Mathf.RoundToInt(other.transform.position.x) + VictoryJudge.SIZE;
         int curry = Mathf.RoundToInt(other.transform.position.y) + VictoryJudge.SIZE;
@@ -138,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
     private void pickFromGenerator(Collider other)
     {
         GetComponent<PlayerMovement>().child = Instantiate(other.GetComponent<ElementGenerator>().child, transform.position, Quaternion.identity);
-
+        //GetComponent<PlayerMovement>().child.GetComponent<ItemManagement>().holding = true;
         GetComponent<PlayerMovement>().child.transform.parent = this.transform;
         haselement = true;
     }
